@@ -77,5 +77,8 @@ build/
 # Session summary
 session_summary.md
 
+# Project info (local only)
+PROJECT_INFO.md
+
 # Note: .xlsx files are NOT ignored and will be tracked by Git
 # This includes files like: pixel_art_*.xlsx
