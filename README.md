@@ -36,6 +36,8 @@ A full-stack web application built with Node.js that allows users to upload imag
 #### 💾 Export Options
 - **Download as PNG** - Save your pixel art as an image file
 - **Export to Excel** - Generate .xlsx files where each pixel becomes a colored cell, perfect for spreadsheet art!
+  
+  ![Excel Export Example](excel.png)
 
 #### 🌐 Multi-Language Support
 - Available in Chinese (简体中文) and English
