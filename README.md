@@ -210,6 +210,8 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 - **下载为 PNG** - 将像素画保存为图片文件
 - **导出为 Excel** - 生成 .xlsx 文件，每个像素对应一个着色单元格，非常适合电子表格艺术！
 
+  ![Excel 导出示例](excel.png)
+
 #### 🌐 多语言支持
 - 支持中文（简体中文）和英文
 - 一键切换语言
@@ -324,7 +326,7 @@ cat FINAL_SUMMARY.md          # 问题修复总结
 
 ### 🌍 部署
 
-```bash
+```
 # 部署到服务器
 npm run deploy
 
