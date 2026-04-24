@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>像素画生成器 - Pixel Art Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="page.title">Pixel Art Generator</h1>
+    <p data-i18n="page.subtitle">一键转换复古像素风</p>
+    <button id="langToggleBtn" class="lang-toggle" title="切换语言 / Toggle Language">🌐 中文</button>
+  </header>
+
+  <main>
+    <!-- 上传区域 -->
+    <section class="upload-section">
+      <div class="upload-area" id="uploadArea">
+        <p><span data-i18n="upload.dragText">拖拽图片至此或</span> <button type="button" id="selectFileBtn" data-i18n="upload.selectFile">选择文件</button></p>
+        <input type="file" id="fileInput" accept="image/*" hidden>
+      </div>
+      <div class="preview-container">
+        <div class="image-preview" id="originalPreview">
+          <p data-i18n="upload.originalPreview">原图预览</p>
+        </div>
+        <div class="image-preview" id="resultPreview">
+          <p data-i18n="upload.resultPreview">像素画预览</p>
+          <div id="loadingIndicator" class="loading hidden">
+            <div class="spinner"></div>
+            <p data-i18n="upload.processing">处理中...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 控制面板 -->
+    <section class="controls">
+      <div class="control-group">
+        <label for="colorDepth" data-i18n="controls.colorDepth">色彩位数:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="colorDepth" value="rainbow"> <span data-i18n="controls.rainbow">彩虹7色</span></label>
+          <label><input type="radio" name="colorDepth" value="engraving-intaglio"> <span data-i18n="controls.engravingIntaglio">版画阴刻</span></label>
+          <label><input type="radio" name="colorDepth" value="engraving-relief"> <span data-i18n="controls.engravingRelief">版画阳刻</span></label>
+          <label><input type="radio" name="colorDepth" value="8"> 8色</label>
+          <label><input type="radio" name="colorDepth" value="16" checked> 16色</label>
+          <label><input type="radio" name="colorDepth" value="32"> 32色</label>
+          <label><input type="radio" name="colorDepth" value="128"> 128色</label>
+          <label><input type="radio" name="colorDepth" value="256"> 256色</label>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="blockSize" data-i18n="controls.blockSize">像素块大小:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="blockSize" value="8" checked> 8×8</label>
+          <label><input type="radio" name="blockSize" value="16"> 16×16</label>
+          <label><input type="radio" name="blockSize" value="32"> 32×32</label>
+        </div>
+      </div>
+
+      <div class="control-actions">
+        <button id="generateBtn" disabled data-i18n="button.generate">生成像素画</button>
+        <button id="resetBtn" data-i18n="button.reset">重置</button>
+        <button id="downloadBtn" disabled data-i18n="button.download">下载图片</button>
+        <button id="exportExcelBtn" disabled data-i18n="button.exportExcel">导出Excel</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p class="copyright" data-i18n="footer.copyright">&copy; 2023 Pixel Art Generator | 使用 Node.js & Sharp 构建</p>
+      
+      <div class="tips-section">
+        <h4 data-i18n="footer.tipsTitle">💡 使用建议</h4>
+        <div class="tips-grid">
+          <div class="tip-item">
+            <strong data-i18n="footer.recommendedFormat">推荐格式：</strong>
+            <span data-i18n="footer.recommendedFormatDesc">PNG（支持透明）、JPEG（通用）、WebP（高效）</span>
+          </div>
+          <div class="tip-item">
+            <strong data-i18n="footer.fileSize">文件大小：</strong>
+            <span data-i18n="footer.fileSizeDesc">建议控制在 5MB 以内，最大支持 10MB</span>
+          </div>
+          <div class="tip-item">
+            <strong data-i18n="footer.resolution">分辨率：</strong>
+            <span data-i18n="footer.resolutionDesc">建议 4000×4000 像素以内</span>
+          </div>
+          <div class="tip-item">
+            <strong data-i18n="footer.transparent">透明背景：</strong>
+            <span data-i18n="footer.transparentDesc">需要透明效果请使用 PNG 或 WebP 格式</span>
+          </div>
+        </div>
+        
+        <div class="supported-formats">
+          <strong data-i18n="footer.supportedFormats">支持的格式：</strong>
+          <span data-i18n="footer.formatsList">JPG, PNG, WebP, GIF, TIFF, SVG, AVIF, HEIC</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
