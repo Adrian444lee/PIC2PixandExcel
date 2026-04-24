@@ -74,8 +74,8 @@ build/
 *.debug
 .debug/
 
-# Session summary (optional, can be kept if needed)
-# session_summary.md
+# Session summary
+session_summary.md
 
 # Note: .xlsx files are NOT ignored and will be tracked by Git
 # This includes files like: pixel_art_*.xlsx
